@@ -1,0 +1,146 @@
+<header>
+    <nav>
+        <div class="nav-wrapper">
+            <div class="container">
+                <a href="#" class="brand-logo"><img src="/images/CircleUp_Logo_WW.png" class="nav-img" alt="CircleUp Logo">CircleUp</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/user">Profile</a></li>
+                    <li><a href="/logout">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section class="group-page">
+    <div class="container">
+        <div class="grid-box">
+            <div class="round-left sidebar">
+                <div class="padded-box">
+                    <img class="placeholder-icon" src="/images/CircleUp_Logo.png">
+                    <h3>{{group.name}}</h3>
+                    <a href="#" class="waves-effect waves-light btn-sm btn-flat btn-sign btn-filled">Invite a Member</a>
+                    <a href="#" class="waves-effect waves-light btn-sm btn-flat btn-sign btn-filled">Leave Group</a>
+                    <h3>Group Members</h3>
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>Adam Cromer</td>
+                            </tr>
+                            <tr>
+                                <td>Chelsey Timmerman</td>
+                            </tr>
+                            <tr>
+                                <td>Katie Sexton</td>
+                            </tr>
+                            <tr>
+                                <td>Scott Olafsen</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="round-right">
+                <div class="padded-box">
+                    <h3>Group Events</h3>
+                     <table class="striped highlight">
+                        <tbody id="event-list" class="list-group">
+                       
+                        </tbody>
+                    </table>
+
+                    <div style="text-align: center;" class="row">
+                        <div class="col s12">
+                            <p>Make your own event!</p>
+                            <p>
+                                <a id="btn-create" class="waves-effect waves-light btn-large btn-flat btn-filled btn-center">Create
+                                    Event</a>
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MODALS -->
+<div id="modal-create" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">&times;</span>
+            <h5 class="modal-title">Create an Event</h5>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="input-field">
+                    <input id="new-event-name-input" type="text" class="validate">
+                    <label for="new-event-name">Event Name</label>
+                </div>
+                <div class="input-field">
+                    <input id="new-event-description-input" type="text" class="validate">
+                    <label for="new-event-description">Event Description</label>
+                </div>
+                <div class="input-field">
+                    <input id="new-event-date-input" type="text" class="datepicker">
+                    <label for="new-event-date">Event Date</label>
+                </div>
+                <div class="input-field">
+                    <input id="new-event-time-input" type="text" class="timepicker">
+                    <label for="new-event-time">Event Time</label>
+                </div>
+                <div class="input-field">
+                    <input type="search" id="address" class="form-control" placeholder="Where are we going?" />
+                    {{!-- <p>Selected: <strong id="address-value">none</strong></p> --}}
+                    <script src="https://cdn.jsdelivr.net/npm/places.js@1.16.1"></script>
+                    <script>
+                        (function () {
+                            var placesAutocomplete = places({
+                                appId: places.appId,
+                                apiKey: places.apiKey,
+                                container: document.querySelector('#address')
+                            });
+                        })();
+
+                    </script>
+                </div>
+                <p>Add Items Needed:</p>
+                <div class="row">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input placeholder="Items Needed" id="item_needed1" type="text" class="validate">
+                                <label for="first_name"></label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input placeholder="Items Needed" id="item_needed2" type="text" class="validate">
+                                <label for="first_name"></label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input placeholder="Items Needed" id="item_needed3" type="text" class="validate">
+                                <label for="first_name"></label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input placeholder="Items Needed" id="item_needed4" type="text" class="validate">
+                                <label for="first_name"></label>
+                            </div>
+                    </form>
+                </div>
+
+                <p style="text-align: center;">
+                    <a class="waves-effect waves-light btn-large btn-flat btn-filled btn-center" id="create-event">Create</a>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<script src="/js/group.js"></script>
+<script src="/js/modal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/places.js@1.16.1"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+    crossorigin="" />
+<script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js" integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+    crossorigin=""></script>

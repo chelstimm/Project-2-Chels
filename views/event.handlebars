@@ -1,0 +1,124 @@
+<header>
+    <nav>
+        <div class="nav-wrapper">
+            <div class="container">
+                <a href="#" class="brand-logo"><img src="/images/CircleUp_Logo_WW.png" class="nav-img" alt="CircleUp Logo">CircleUp</a>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="/user">Profile</a></li>
+                    <li><a href="/group">Group</a></li>
+                    <li><a href="logout.html">Logout</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section class="event-page">
+    <div class="container">
+        <div class="grid-box">
+            <div class="round-left sidebar">
+                <div class="padded-box">
+                    <div class="event-info">
+                        <span class="event-day">MONDAY</span>
+                        <span class="event-month">MARCH</span>
+                        <span class="event-date">25</span>
+                        <span class="event-time">6:30pm</span>
+                        <span class="event-street">100 S 200 W</span>
+                        <span class="event-cityst">Sandy, UT</span>
+                    </div>
+                    {{!-- //mapquest// --}}
+                    <div id="map" style="height: 200px;"></div>
+                    <script>
+                     
+                        L.mapquest.key = "zgFKXJ2pWxFRwOSV49ARYwhDCodQh5DK";
+                        L.mapquest.map('map', {
+                            center: [40.5649, -111.8389],
+                            layers: L.mapquest.tileLayer('map'),
+                            zoom: 12
+                        });
+                    </script>
+
+                    {{!-- <a class="waves-effect waves-light btn-sm btn-flat btn-sign btn-filled">Add to Calendar</a> --}}
+                   
+                    <div title="Add to Calendar" class="addeventatc" class="waves-effect waves-light btn-sm btn-flat btn-sign btn-filled">
+                        Add to Calendar
+                        <span class="start"></span>
+                        <span class="title"></span> 
+                        <span class="location"></span>
+                    </div>
+                 
+                    <a class="waves-effect waves-light btn-sm btn-flat btn-sign btn-filled">RSVP</a>
+
+
+                </div>
+            </div>
+
+            <div class="round-right">
+                <div class="padded-box">
+                    <h3 class="title-color">{{event.name}}</h3>
+
+                    <p>{{event.description}}</p>
+
+
+                    <div class="row">
+                        <div class="col s5">
+                            <h4 class="title-color">Attendees</h4>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td>Adam Cromer</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Chelsey Timmerman</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Katie Sexton</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Scott Olafsen</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <div class="col s7">
+                            <h4 class="title-color">Items Needed</h4>
+                            <ul id="example-list" class="list-group">
+          {{!-- {{event.itemsToBring}} --}}
+         
+        </ul>
+                            <p>Please select an item to bring from the list below:</p>
+                            <p>
+                                <label>
+                                    <input type="checkbox" />
+                                    <span>Hamburgers</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input type="checkbox" />
+                                    <span>Buns</span>
+                                </label>
+                            </p>
+                            <p>
+                                <label>
+                                    <input type="checkbox" />
+                                    <span>Chips</span>
+                                </label>
+                            </p>
+                             <p>
+                                <label>
+                                    <input type="checkbox" />
+                                    <span>Drinks</span>
+                                </label>
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+</section>
+
+<script src="/js/event.js"></script>
+<script src="/js/modal.js"></script>
+<script src="/keys.js"></script>

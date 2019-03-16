@@ -1,0 +1,37 @@
+@media screen and (max-width: 768px) {
+
+    /*
+    ==============================
+    COLUMN SETUP
+    ==============================
+    */
+    
+    .grid-box, 
+    .signin .grid-box, 
+    .about .grid-box {
+        grid-template-columns: 1fr;
+    }
+
+    .round-left {
+        border-radius: 20px 20px 0 0;
+    }
+    
+    .round-right {
+        border-radius: 0 0 20px 20px;
+    }
+
+    /*
+    ==============================
+    SIGN-IN/UP PAGE
+    ==============================
+    */
+
+    .signup .sign-flex,
+    .signin .sign-flex,
+    .error .sign-flex,
+    .about .sign-flex {
+        height: auto;
+        min-height: 1px;
+    }
+
+}

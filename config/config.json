@@ -1,0 +1,21 @@
+{
+  "development": {
+    "username": "root",
+    "password": "Timmer11!",
+    "database": "new_events_db",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": "SamanthaandAlice",
+    "database": "testdb",
+    "host": "localhost",
+    "dialect": "mysql",
+    "logging": false
+  },
+  "production": {
+    "use_env_variable": "JAWSDB_URL",
+    "dialect": "mysql"
+  }
+}
